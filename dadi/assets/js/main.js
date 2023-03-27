@@ -17,8 +17,6 @@ Mail:
 /* -------------------------------------------------------------------------------------------- */
 
 
-// Creo la variabile collegata all'input(#email) nel DOM
-const input = document.getElementById(`email`).value;
 
 // Creo l'insieme listaInvitati(array) per avere una lista di email che corrisponda al value inserito nell'input
 const listaInvitati = [
@@ -35,9 +33,27 @@ const listaInvitati = [
     `javascript@gmail.com`
 ];
 
-console.log(input)
+// Creazione variabile booleana per verifica condizione
+let bool = false;
 
+// Creazione evento al click di submit
 function myFunction() {
-
-    if ()
+    
+    // Creo la variabile collegata all'input(#email) nel DOM
+    let input = document.getElementById(`email`).value;
+    
+    // Creazione ciclo per dare una numerazione a ogni stringa della lista array
+    for (i = 0; i < listaInvitati.length; i++) {
+    
+        if ( listaInvitati[i] == input ) {
+    
+            bool = true;
+            risposta = `Sei stato invitato!`
+        } else {
+            risposta = `Non sei stato invitato!`
+        }   
+        
+        document.getElementById("risposta").innerHTML = `${risposta}`;
+    }
 }
+
