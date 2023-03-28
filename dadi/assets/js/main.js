@@ -1,59 +1,37 @@
 /*
-Mail:
-    - Chiedi all’utente la sua email,
-    - controlla che sia nella lista di chi può accedere,
-    - stampa un messaggio appropriato sull’esito del controllo.
+Gioco dei dadi:
+    - Generare un numero random da 1 a 6, sia per il giocatore sia per il computer.
+    - Stabilire il vincitore, in base a chi fa il punteggio più alto.
 */
 
-// 1.- Chiedi all'utente la sua email
+// Creo due variabili con numeri decimali random
+let playerY = ( Math.floor( Math.random() * 6) + 1 );
 
-// 2.- Metto un input sul DOM e lo collego a main.js
+let playerX = ( Math.floor( Math.random() * 6) + 1 );
 
-// 3.- Creo la condizione attraverso la quale il value dell'input corrisponda oppure no alla lista (insieme array)
+console.log(playerY, playerX);
 
-// 4.- Quando il value dell'input corrisponde alla condizione stampo un messaggio sull'esito del controllo
+if (playerX < playerY) {
 
+    risultato = `PlayerX is the WINNER!`
+    console.log(true)
+} else if (playerX > playerY) {
 
-/* -------------------------------------------------------------------------------------------- */
+    risultato = `PlayerY is the WINNER!`
+    console.log(false)
+} else {
 
-
-
-// Creo l'insieme listaInvitati(array) per avere una lista di email che corrisponda al value inserito nell'input
-const listaInvitati = [
-    `alvaroarbaiza@gmail.com`,
-    `vincenzoroma@gmail.com`,
-    `luisabarone@gmail.com`,
-    `pincopallino@gmail.com`,
-    `bianconero@gmail.com`,
-    `gialloblu@gmail.com`,
-    `truefalse@gmail.com`,
-    `classeid@gmail.com`,
-    `htmlcss@gmail.com`,
-    `bootstrap@gmail.com`,
-    `javascript@gmail.com`
-];
-
-// Creazione variabile booleana per verifica condizione
-let bool = false;
-
-// Creazione evento al click di submit
-function myFunction() {
-    
-    // Creo la variabile collegata all'input(#email) nel DOM
-    let input = document.getElementById(`email`).value;
-    
-    // Creazione ciclo per dare una numerazione a ogni stringa della lista array
-    for (i = 0; i < listaInvitati.length; i++) {
-    
-        if ( listaInvitati[i] == input ) {
-    
-            bool = true;
-            risposta = `Sei stato invitato!`
-        } else {
-            risposta = `Non sei stato invitato!`
-        }   
-        
-        document.getElementById("risposta").innerHTML = `${risposta}`;
-    }
+    risultato = `Nobody wins. Try again!`
+    console.log(`pari`)
 }
 
+document.getElementById(`game`).innerHTML = `
+
+    <div>
+        <h2>${playerY}</h2>
+        <h2>${playerX}</h2>
+    </div> 
+    <div>
+        <p>${risultato}</p>
+    </div> 
+`; 

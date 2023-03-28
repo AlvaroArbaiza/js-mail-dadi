@@ -35,7 +35,7 @@ const listaInvitati = [
 
 // Creazione variabile booleana per verifica condizione
 let invitato = false;
-let risposta;
+
 // Creazione evento al click di submit
 function myFunction() {
     
