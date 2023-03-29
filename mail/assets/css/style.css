@@ -1,0 +1,84 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: url(../img/2979667.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#container {
+    width: 100%;
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#container #box {
+    border-radius: 20px;
+    width: 500px;
+    height: 300px;
+    margin: 0 auto;
+    padding: 30px;
+    outline: 3px solid #e6bd47;
+    background: #ffffff;
+    box-shadow:  0 0 0 #cccccc,
+                 0 0 0 #ffffff,
+                  10px 10px 10px #cccccc inset,
+                  -10px -10px 10px #ffffff inset;
+    animation: anime 1s cubic-bezier(0.16, 1, 0.3, 1) 1s infinite alternate;
+}
+
+@keyframes anime {
+    0% {
+      width: 500px;
+      height: 300px;
+      outline: 1px solid #e6bd47;
+      background: #ffffff;
+      box-shadow:  0 0 0 #cccccc,
+                   0 0 0 #ffffff;
+    }
+ 
+    100% {
+      width: 500px;
+      height: 300px;
+      background: #ffffff;
+      box-shadow:  40px 40px 40px #cccccc,
+                   0 0 0 #ffffff;
+    }
+}
+
+#container #box > div {
+    margin-bottom: 40px;
+    text-align: center;
+    color: #2b85ce;
+}
+
+#container #box > div h1 {
+    font-size: 40px;
+    
+}
+
+#container #box > div h2 {
+    margin-bottom: 20px;
+}
+
+#container #box div input#btn {
+    font-size: 18px;
+    margin-top: 20px;
+    padding: 5px 20px;
+    background-color: #99D6EA;
+    border-radius: 20px;
+    border: none;
+    color: black;
+}
+
+#container #box div input#btn:hover {
+    background-color: #1e9aff;
+    color: white;
+}
