@@ -11,27 +11,43 @@ let playerX = ( Math.floor( Math.random() * 6) + 1 );
 
 console.log(playerY, playerX);
 
+let risultato;
+
 if (playerX < playerY) {
 
-    risultato = `PlayerX is the WINNER!`
-    console.log(true)
+    risultato = `CPU is the WINNER!`
 } else if (playerX > playerY) {
 
-    risultato = `PlayerY is the WINNER!`
-    console.log(false)
+    risultato = `You are the WINNER!`
 } else {
 
     risultato = `Nobody wins. Try again!`
     console.log(`pari`)
 }
 
-document.getElementById(`game`).innerHTML = `
+document.getElementById(`container`).innerHTML = `
 
-    <div>
-        <h2>${playerY}</h2>
-        <h2>${playerX}</h2>
-    </div> 
-    <div>
+    <div id="game">
+    
+        <div class="players">
+            <img src="./assets/img/Dice_${playerX}.png" alt="">
+            <h2>You</h2>
+        </div> 
+
+        <div id="btn">
+            <button id="gioca">
+                <h2>Gioca!</h2>
+            </button>
+        </div>  
+
+        <div class="players">
+            <img src="./assets/img/Dice_${playerY}.png" alt="">
+            <h2>CPU</h2>
+        </div>
+        
+    </div>
+
+    <div id="result">
         <p>${risultato}</p>
     </div> 
 `; 
